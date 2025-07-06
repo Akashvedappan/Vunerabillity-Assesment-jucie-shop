@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Application Penetration Testing – OWASP Juice Shop</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #58a6ff;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    h2 {
+      font-size: 22px;
+      margin-top: 30px;
+    }
+    code {
+      background-color: #161b22;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #30363d;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #161b22;
+      color: #58a6ff;
+    }
+    .code-block {
+      background-color: #161b22;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-family: monospace;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔐 Web Application Penetration Testing – OWASP Juice Shop</h1>
+
+  <div class="section">
+    <h2>🎯 Project Overview</h2>
+    <p>This project involves a full-scale penetration test on <strong>OWASP Juice Shop</strong>, an intentionally vulnerable web application. The goal is to identify and exploit OWASP Top 10 vulnerabilities and suggest remediations.</p>
+  </div>
+
+  <div class="section">
+    <h2>🧰 Tools & Technologies</h2>
+    <ul>
+      <li><strong>Recon:</strong> Nmap, Subfinder, AMASS, FFUF, HTTPX, theHarvester</li>
+      <li><strong>Scanning:</strong> Burp Suite, OWASP ZAP</li>
+      <li><strong>Manual Testing:</strong> Parameter tampering, JWT abuse, SQLi payloads</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>🚨 Discovered Vulnerabilities</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Vulnerability</th>
+          <th>Description / Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Broken Access Control</td><td>Cart manipulation via BasketId override</td></tr>
+        <tr><td>2</td><td>SQL Injection</td><td>Login bypass, DB manipulation</td></tr>
+        <tr><td>3</td><td>XSS (Stored/DOM)</td><td>Session theft, DOM/UI manipulation</td></tr>
+        <tr><td>4</td><td>CSRF</td><td>Forced user actions via crafted HTML</td></tr>
+        <tr><td>5</td><td>Null Byte Injection</td><td>Access sensitive .md backup files</td></tr>
+        <tr><td>6</td><td>SSTI</td><td>Remote code execution via template injection</td></tr>
+        <tr><td>7</td><td>Password Reset Exploit</td><td>Unauthorized reset by removing <code>currentPassword</code></td></tr>
+        <tr><td>8</td><td>XXE</td><td>File disclosure using malicious XML (<code>/etc/passwd</code>)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🔒 Remediation Recommendations</h2>
+    <ul>
+      <li>Enforce strong input validation and output encoding</li>
+      <li>Use parameterized queries</li>
+      <li>Enable CSRF protection with tokens</li>
+      <li>Disable public admin role creation</li>
+      <li>Harden JWT sessions and use secure cookies</li>
+      <li>Patch all known CVEs</li>
+      <li>Apply Content Security Policy (CSP)</li>
+      <li>Educate developers on secure coding practices</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>📁 Project Structure</h2>
+    <div class="code-block">
+<pre>
+/screenshots       -> PoC screenshots & payload results  
+/exploit-scripts   -> Sample payloads & Burp requests  
+/report.md         -> Full testing report  
+/image/            -> Project infographic & cover image
+</pre>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>📜 Disclaimer</h2>
+    <p>This project was performed in a legal, controlled environment using OWASP Juice Shop. Do not attempt these techniques on any unauthorized systems.</p>
+  </div>
+
+</body>
+</html>
