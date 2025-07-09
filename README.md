@@ -45,3 +45,5 @@ This project demonstrates how real-world web vulnerabilities can be discovered, 
 🤝 Disclaimer
 This project was conducted in a controlled environment using OWASP Juice Shop, a legal, intentionally vulnerable app for cybersecurity education.
 Do not attempt these techniques on unauthorized systems.
+
+You can view the full report hosted on Notion here: https://concise-hurricane-b7d.notion.site/22bb5694af9d801790b9cba4202ee144?pvs=141
