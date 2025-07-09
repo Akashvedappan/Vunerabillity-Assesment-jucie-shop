@@ -1,0 +1,19 @@
+# ⚙️ ENVIRONMENT SETUP
+
+# Clone OWASP Juice Shop locally (if not using Docker)
+git clone https://github.com/juice-shop/juice-shop.git
+cd juice-shop
+npm install
+npm start
+
+# OR using Docker (recommended)
+docker pull bkimminich/juice-shop
+docker run -d -p 3000:3000 bkimminich/juice-shop
+
+# Confirm service is running
+curl http://localhost:3000
+
+
+
+
+
